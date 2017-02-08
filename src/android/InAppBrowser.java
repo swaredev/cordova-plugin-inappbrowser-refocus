@@ -1038,6 +1038,8 @@ public class InAppBrowser extends CordovaPlugin {
 
         public void onPageFinished(WebView view, String url) {
             super.onPageFinished(view, url);
+			view.clearFocus();
+            view.requestFocus();
 
             // CB-10395 InAppBrowser's WebView not storing cookies reliable to local device storage
             if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
